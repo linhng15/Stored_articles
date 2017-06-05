@@ -1,0 +1,31 @@
+{
+  "name": "stored_articles",
+  "version": "1.0.0",
+  "description": "Save news to look back later",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cheerio": "^1.0.0-rc.1",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.9",
+    "mongojs": "^2.4.0",
+    "mongoose": "^4.10.4",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linhng15/Stored_articles.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linhng15/Stored_articles/issues"
+  },
+  "homepage": "https://github.com/linhng15/Stored_articles#readme"
+}
