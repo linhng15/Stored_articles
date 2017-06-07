@@ -5,7 +5,9 @@
     <div class="col-sm-12 title">
         <h1><b>BREAKING NEWS</b></h1>
         <br>
-        <p class="right"><a href="/">Home</a>  | <a href="/saved">Saved Articles</a> | <button class="btn btn-xs btn-danger btn-size" id="scrape-submit" type="Submit">SCRAPE NEW ARTICLES!</button></p>
+        <p class="right"><a href="/">Home</a>  | <a href="/saved">Saved Articles</a> | 
+        <a class="btn btn-xs btn-danger btn-size" href="/scrape"  id="scrape-submit" role="button">SCRAPE NEW ARTICLES!</a>
+
     </div>
     <div class="col-sm-12">
         <br>
@@ -24,30 +26,13 @@
     <br>
     <div class="col-sm-8">
       <div class="container scroll">
-        <div id="articles"></div>
-        <div id="notes"></div>
-
-        {{!-- <table class="table table-hover table-nonfluid">
-          <thead>
-            <tr>
-              <th>Name</th>
-            </tr>
-          </thead>
-          <tbody class="">
-            {{#each checkout}}
-            <tr tabindex="1">
-              <td>{{this.name}}</td>
-              <td>                
-                <form action="/{{this.id}}?_method=DELETE" method="POST" class="pull-left">
-                  <input type="hidden" name="status" value="false">
-                  <input type="hidden" name="id" value="{{this.id}}">
-                  <button class="btn btn-xs btn-danger btn-size" type="submit"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                </form>
-              </td>
-            </tr>
-            {{/each}}
-          </tbody>
-        </table> --}}
+        <div class="panel panel-primary" id="articles">
+          <div class="btn-group pull-right">
+            <a href="#" class="btn btn-default btn-sm">Save Article</a>
+          </div>
+          <div class="panel-heading">Panel with panel-primary class</div>
+          <div class="panel-body">Panel Content</div>
+        </div>
       </div>
     </div>
   </div>

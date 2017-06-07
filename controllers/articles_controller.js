@@ -39,11 +39,11 @@ router.get("/scrape", function(req, res) {
 
   	// Load the body of the HTML into cheerio
    	var $ = cheerio.load(html);
+    // Empty array to save our scraped data
+    var result = [];
 
   	// With cheerio, find each h2-tag with the class "story-heading"
   	$("article.story.theme-summary").each(function(i, element) {
-      // Empty array to save our scraped data
-      var result = [];
       
       // Save the text of the h2-tag as "title"
       result.title = $("h2.story-heading").text();
@@ -80,10 +80,24 @@ router.get("/scrape", function(req, res) {
 
 // This will get the articles we scraped from the mongoDB
 router.get("/", function(req, res) {
-  res.render("index");
+  // Grab every doc in the Articles array
+  Article.find({}, function(error, doc) {
+    // Log any errors
+    if (error) {
+      return res.sendStatus(500);
+    }
+    // Or send the doc to the browser as a json object
+    else {
+      var articleList = {
+        Article: doc
+      }
+      // res.json(doc);
+    }
+    res.render("index", articleList);
+  });
 });
 
-// // Grab an article by it's ObjectId
+// Grab an article by it's ObjectId
 // router.get("/articles/:id", function(req, res) {
 //   // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
 //   Article.findOne({ "_id": req.params.id })
