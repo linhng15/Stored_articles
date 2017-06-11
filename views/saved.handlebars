@@ -2,56 +2,67 @@
 <div class="container">
   
   <div class="row">
+    <div class="col-sm-12 title">
+        <h1><b>BREAKING NEWS</b></h1>
+        <br>
+        <p class="right"><a href="/">Home</a>  | <a href="/saved">Saved Articles</a> 
+
+    </div>
     <div class="col-sm-12">
         <br>
         <img src="./images/typewriter.jpg" alt="writing instrument">
     </div>
-    <div class="col-sm-12 title">
-        <h1><b>BREAKING NEWS</b></h1>
-        <br>
-        <p class="right"><a href="/">Home</a>  | <a href="/saved">Saved Articles</a> | <button class="btn btn-xs btn-danger btn-size" id="scrape-submit" type="Submit">SCRAPE NEW ARTICLES!</button></p>
-    </div>
   </div>
 
-
-
   <hr>
-  <div class="row">
+   <div class="row">
     <div class="col-sm-2">
     </div>
   </div>
-  <div class=""><h2>List of Articles</h2>
+  <div class=""><h2>List of Save Articles</h2>
     <br>
     <div class="col-sm-8">
       <div class="container scroll">
-        <h1>Note Scraper</h1>
-        <h2><i>If you can do this...the homework should be no problem.</i></h2>
-        <div id="articles"></div>
-        <div id="notes"></div>
+        <div class="panel panel-primary" id="articles">
+          
+          <div class="btn-group pull-right">
+            <a href="/#" class="btn btn-default btn-sm">Article Note</a>
 
-        {{!-- <table class="table table-hover table-nonfluid">
-          <thead>
-            <tr>
-              <th>Name</th>
-            </tr>
-          </thead>
-          <tbody class="">
-            {{#each checkout}}
-            <tr tabindex="1">
-              <td>{{this.name}}</td>
-              <td>                
-                <form action="/{{this.id}}?_method=DELETE" method="POST" class="pull-left">
-                  <input type="hidden" name="status" value="false">
-                  <input type="hidden" name="id" value="{{this.id}}">
-                  <button class="btn btn-xs btn-danger btn-size" type="submit"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                </form>
-              </td>
-            </tr>
-            {{/each}}
-          </tbody>
-        </table> --}}
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+
+
+            <a href="/#" class="btn btn-xs btn-danger btn-size">Delete From Saved</a>
+          </div>
+          <div class="panel-heading">title here</div>
+          <div class="panel-body">summary</div>
+        </div>
       </div>
     </div>
+  </div>
+  
+  <div class="col-sm-2">
   </div>
   
   <div class="col-sm-2">
@@ -60,25 +71,3 @@
   <hr>
 </div>
 
-{{!-- <!-- Modal -->
-  <div id="notes" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title"><strong>Best Match</strong></h2>
-        </div>
-        <div class="modal-body">
-          <h2 id="matchName"></h2>
-          <img id="matchImg" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
- --}}
