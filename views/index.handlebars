@@ -17,32 +17,54 @@
 
   <hr>
   <div class="row">
-    <div class="col-sm-2">
-    </div>
-  </div>
-  <div class=""><h2>List of Articles</h2>
     <br>
     <div class="col-sm-8">
-      <div class="container scroll">
-        <div id="articles">   
-        {{#each articles}} 
-           <h3> {{title}} </h3>
-         {{/each}}
-          
-          <div class="btn-group pull-right">
-            <a href="/saved" class="btn btn-default btn-sm">Save Article</a>
-          </div>
-         {{!--  {{#each articleList}}
-          <div class="panel-heading">{{this.title}}title here</div>
-          <div class="panel-body">{{this.summary}}summary</div>
-          {{/each}} --}}
+      <h2>List of Articles</h2>
+      <div id="articles">   
+        <div class="scroll">
+          <hr>
+          {{!-- Table  --}}
+          <table class="table table-hover">
+            {{!-- Table head --}}
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            {{!-- Loops data into table rows --}}
+            <tbody>
+              {{#each articles}} 
+              <tr tabindex="1" >
+                <td> <a href="/articles/{{_id}}"> {{title}}</a></td> 
+                <td>{{link}}</td> 
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-  </div>
-  
-  <div class="col-sm-2">
-  </div>
-  
+
+    {{!-- 4/12 columns span --}}
+    <div class="col-sm-4">
+      <form action="/articles" method="POST" class="form-horizontal">
+        <h2>Notes For Articles</h2>
+        <br>
+        <div class="col-sm-12"><label>Title</label>
+        <input class="form-control" name="Title" type="text" placeholder="Title"></div>
+        <div class="col-sm-12"><label>Comments</label>
+        <input class="form-control" name="Notes" type="text" placeholder="Notes"></div> 
+        <br>
+        <div class="form-group">
+          <div class="col-md-12 admin-center">
+            <br>
+            <br>
+            <button class="btn btn-success" id="savenote" type="Submit">Save Note</button>
+          </div>
+        </div>
+      </form>
+    </div>    
   <hr>
+  </div>
 </div>

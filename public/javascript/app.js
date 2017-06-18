@@ -1,6 +1,6 @@
 console.log("hello there");
 
-// Grab the articles as a json
+// //Grab the articles as a json
 // $.getJSON("/articles", function(data) {
 //   // For each one
 //   for (var i = 0; i < data.length; i++) {
@@ -11,7 +11,7 @@ console.log("hello there");
 
 
 // // Whenever someone clicks a p tag
-// $(document).on("click", "#scrape-submit", function() {
+// $(document).on("click", "td", function() {
 //   // Empty the notes from the note section
 //   $("#notes").empty();
 //   // Save the id from the p tag
